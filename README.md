@@ -5,3 +5,7 @@
 Посмотреть работу: 
 
 https://web-bombaster.github.io/Methed-Happy-Birthday/
+
+Работу выполнил: Мошатин Юрий
+
+https://vk.com/moshatin
