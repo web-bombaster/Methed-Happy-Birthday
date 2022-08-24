@@ -4,4 +4,4 @@
 
 Посмотреть работу: 
 
-(https://web-bombaster.github.io/Methed-Happy-Birthday/)
+https://web-bombaster.github.io/Methed-Happy-Birthday/
