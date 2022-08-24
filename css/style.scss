@@ -1,0 +1,325 @@
+
+@font-face {
+	font-family: "Bad Script";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+
+	/* Браузер сначала попробует найти шрифт локально */
+	src: local("Bad Script"),
+		/* Если не получилось, загрузит woff2 */
+		url("../fonts/bad-script-v16-latin_cyrillic-regular.woff2") format("woff2"),
+		/* Если браузер не поддерживает woff2, загрузит woff */
+		url("../fonts/bad-script-v16-latin_cyrillic-regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+
+	/* Браузер сначала попробует найти шрифт локально */
+	src: local("OpenSans-Regular"),
+		/* Если не получилось, загрузит woff2 */
+		url("../fonts/OpenSans-Regular.woff2") format("woff2"),
+		/* Если браузер не поддерживает woff2, загрузит woff */
+		url("../fonts/OpenSans-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+
+	/* Браузер сначала попробует найти шрифт локально */
+	src: local("OpenSans-Bold"),
+		/* Если не получилось, загрузит woff2 */
+		url("../fonts/OpenSans-Bold.woff2") format("woff2"),
+		/* Если браузер не поддерживает woff2, загрузит woff */
+		url("../fonts/OpenSans-Bold.woff") format("woff");
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.8rem;
+}
+
+.women {
+	background-color: #FFF1F8;
+}
+
+.men {
+	background-color: #EFF9FE;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.container {
+	width: 100%;
+	max-width: 1320px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 30px;
+	padding-right: 30px;
+
+	@media (max-width: 840px) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+.header {
+	padding: 28px 0;
+	background-color: #fff;
+	box-shadow: 0px 1px 20px rgba(72, 3, 38, 0.07);
+
+	@media (max-width: 840px) {
+		padding: 15px 0;
+	}
+}
+
+.header__container {
+	display: flex;
+	/* flex-wrap: wrap; */
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__button-wrapper {
+	display: flex;
+	// align-items: center;
+
+	@media (max-width: 840px) {
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	background-color: #fff;
+
+	color: #fff;
+	font-family: 'Open Sans';
+	font-weight: 700;
+	line-height: 1.38;
+
+	&:disabled {
+		cursor: text;
+	}
+}
+
+.header__button-change {
+	font-size: 1.8rem;
+	padding: 20px 53px;
+	border-radius: 30px;
+
+	transition: background-color 0.25s;
+
+
+
+	@media (max-width: 840px) {
+		padding: 10px 25px;
+		font-size: 1.4rem;
+	}
+
+	.women & {
+		background-color: #C300C7;
+
+		&:hover {
+			background-color: darken(#C300C7, 5%);
+		}
+	}
+
+	.men & {
+		background-color: #1178B2;
+
+		&:hover {
+			background-color: darken(#1178B2, 5%);
+		}
+	}
+}
+
+.header__button-change:not(:last-of-type) {
+	margin-right: 30px;
+
+	@media (max-width: 840px) {
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+}
+
+.header__button-gender {
+	background-color: #fff;
+	width: 60px;
+	height: 60px;
+	box-shadow: 0px 0px 24px 4px rgba(0, 0, 0, 0.04);
+	border-radius: 10px;
+	border: 1px solid #fff;
+	transition: .25s;
+
+	background-size: 36px 36px;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	@media (max-width: 840px) {
+		width: 40px;
+		height: 40px;
+		background-size: 30px 30px;
+	}
+}
+
+.header__button-gender--men {
+	background-image: url('../img/men.svg');
+	margin-right: 20px;
+
+	@media (max-width: 840px) {
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+}
+
+.header__button-gender--men.active
+{
+	border: 1px solid #1178B3;
+}
+
+
+.header__button-gender--women {
+	background-image: url('../img/women.svg');
+}
+
+.header__button-gender--women.active
+{
+	border: 1px solid #C300C7;
+}
+
+.card {
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.card__wrapper {
+	position: relative;
+	max-width: 840px;
+	margin-top: 32px;
+	margin-bottom: 32px;
+	margin-left: auto;
+	margin-right: auto;
+
+	font-size: 3px;
+
+	filter: drop-shadow(0px 0px 50px rgba(96, 4, 50, 0.23));
+}
+
+.card__image {
+	width: 100%;
+	height: auto;
+}
+
+.card__text {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	white-space: pre-wrap;
+	/* font-size: 18px; */
+	font-size: max(3em, min(calc(100vw * 3 / 140), 6em));
+	font-weight: 400;
+	line-height: 1.6;
+	color: #000;
+}
+
+.women .card__text {
+	font-family: 'Bad Script';
+}
+
+.men .card__text {
+	font-family: 'Open Sans';
+	font-weight: 700;
+}
+
+.footer {
+	margin-top: auto;
+	// padding-top: 17px;
+	padding-bottom: 17px;
+	font-size: 1.6rem;
+}
+
+.footer__container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+
+	@media (max-width: 840px) {
+		flex-direction: column;
+	}
+}
+
+.footer__text {
+	@media (max-width: 840px) {
+		text-align: center;
+		margin-top: 30px;
+		order: 2;
+	}
+}
+
+.footer__text p {
+	margin-top: 0;
+}
+
+.footer__text p:not(:last-of-type) {
+	margin-bottom: 8px;
+}
+
+.soc-btn__list {
+	display: flex;
+}
+
+.soc-btn__item:not(:last-of-type) {
+	margin-right: 16px;
+}
+
+.soc-btn__link {
+	transition: opacity .25s;
+
+	.women & {
+		color: #aa00ae;
+	}
+
+	.men & {
+		color: #1178B2;
+	}
+}
+
+.soc-btn__link:hover {
+	opacity: .7;
+}
